@@ -1,0 +1,7 @@
+# Agregar sitios a Hosts Windows
+# Powershell como administrador
+notepad C:\WINDOWS\system32\drivers\etc\hosts
+
+# Se agrega:
+192.168.145.128	site1.cert.unam.mx
+192.168.145.128	site1.cert.unam.mx

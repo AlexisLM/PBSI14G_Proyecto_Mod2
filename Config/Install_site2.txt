@@ -1,0 +1,11 @@
+# Creación de usuario y DB
+su - postgres
+createuser --pwprompt --encrypted --no-createdb drupal_owner_site2
+createdb --encoding=UTF8 --owner=drupal_owner_site2 site2
+
+# Descarga del sitio
+cd /var/www/
+drush dl drupal-8.x
+mv drupal-8.8.4 site2
+cd site2
+drush si --account-mail=alexis.lopez@seguridad.unam.mx --account-name=admin --account-pass=hola123., --db-url=pgsql://drupal_owner_site2:hola123.,@localhost:5432/site2 --site-name="Site 2"

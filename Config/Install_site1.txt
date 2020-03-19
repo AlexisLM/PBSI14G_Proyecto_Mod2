@@ -1,0 +1,11 @@
+# Creación de usuario y DB
+su - postgres
+createuser --pwprompt --encrypted --no-createdb drupal_owner_site1
+createdb --encoding=UTF8 --owner=drupal_owner_site1 site1
+
+# Descarga del sitio
+cd /var/www/
+drush dl drupal-7.69
+mv drupal-7.69 site1
+cd site1
+drush si --account-mail=alexis.lopez@seguridad.unam.mx --account-name=admin --account-pass=hola123., --db-url=pgsql://drupal_owner_site1:hola123.,@localhost:5432/site1 --site-name="Site 1"
