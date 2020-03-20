@@ -21,7 +21,21 @@ else
   exit 1
 fi
 
-echo -e "\Disabling modules..."
-./disable_modules.sh
+#echo -e "\nDisabling modules..."
+#./disable_modules.sh
 
+# Renaming sites
+echo -e "\nRenaming site1 to site1_old"
+mv /var/www/site1 /var/www/site1_old
+
+echo -e "\nRenaming site2 to site2_old"
+mv /var/www/site2 /var/www/site2_old
+
+# Install new sites
+echo -e "\nInstalling new sites"
+echo -e "\nInstalling site1"
+./install_site.sh "site1" "adminsite1" "databasesite1"
+
+echo -e "\nInstalling site2"
+./install_site.sh "site2" "adminsite2" "databasesite2"
 
