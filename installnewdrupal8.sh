@@ -1,7 +1,8 @@
 #!/bin/bash
+sitepath="${1}"
 
 echo "Information for new Drupal 8 site..."
-read -p "Directory Path for Drupal 7 site (remove last '/'): " sitepath
+#read -p "Directory Path for Drupal 7 site (remove last '/'): " sitepath
 read -p "Database username (new): " dbuser
 read -s -p "Database password(new): " dbpass
 echo

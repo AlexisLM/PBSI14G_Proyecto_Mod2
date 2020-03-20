@@ -31,6 +31,14 @@ echo -e "\nChecking dependencies..."
 #echo -e "\nDisabling modules..."
 #./disable_modules.sh
 
+# Install new sites
+echo -e "\nInstalling new sites..."
+echo -e "\nInstalling site1..."
+./installnewdrupal8.sh "${site1path}"
+
+echo -e "\nInstalling site2..."
+./installnewdrupal8.sh "${site2path}"
+
 # Rename sites
 echo -e "\nRenaming sites..."
 echo -e "Renaming ${site1path} to ${site1path}_old..."
@@ -38,12 +46,4 @@ mv ${site1path} ${site1path}_old
 
 echo -e "Renaming ${site2path} to ${site2path}_old..."
 mv ${site2path} ${site2path}_old
-
-# Install new sites
-echo -e "\nInstalling new sites..."
-echo -e "\nInstalling site1..."
-#./install_site.sh "site1" "adminsite1" "databasesite1"
-
-echo -e "\nInstalling site2..."
-#./install_site.sh "site2" "adminsite2" "databasesite2"
 
