@@ -15,11 +15,13 @@ if [[ $(is_Installed 'git') -eq 0 ]]; then
   echo "Installing git..."
 
   apt install -y git
+
+  echo "Git successfully installed."
 else
   echo "Git is installed."
 fi
 
-echo "Checking if git is installed..."
+echo "Checking if drush is installed..."
 
 if [[ $(is_Installed 'drush') -eq 0 ]]; then
   echo "Installing drush..."
@@ -33,6 +35,8 @@ if [[ $(is_Installed 'drush') -eq 0 ]]; then
 
   # Add drush autocomplete
   drush init
+
+  echo "Drush successfully installed."
 else
   echo "Drush is installed."
 fi
